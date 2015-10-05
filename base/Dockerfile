@@ -1,4 +1,4 @@
-FROM centos:6.6
+FROM centos:6
 
 MAINTAINER Cein Markey <hi@ceinmarkey.co.uk>
 
