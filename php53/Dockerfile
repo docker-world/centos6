@@ -1,23 +1,21 @@
 FROM dockerworld/centos6:httpd
 
-MAINTAINER Cein Markey <hi@ceinmarkey.co.uk>
+MAINTAINER Eric Mugerwa <ericmdev@gmail.com>
 
 LABEL version="1.0"
-LABEL description="PHP: 5.3 (PDO, MySQLI, XML, Intl)"
+LABEL description="PHP: 5.3 (MySQL; PDO; XML; Intl)"
 
-# install php 5.3
-RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
-RUN rpm -Uvh https://mirror.webtatic.com/yum/el6/webtatic-release.rpm
-RUN yum install php53w php53w-opcache -y
+# install php 5.3 - use default yum php - centos 6.7
+RUN yum install php -y
 
 # install php 5.3 extensions
-RUN yum install php53w-pdo -y
-RUN yum install php53w-mysqli -y
-RUN yum install php53w-xml -y
-RUN yum install php53w-intl -y
+RUN yum install php-pdo -y
+RUN yum install php-mysqli -y
+RUN yum install php-xml -y
+RUN yum install php-intl -y
 
 # set php date timezone
-RUN perl -pi -e "s#;date.timezone =.*#date.timezone = Europe/London#g" /etc/php.ini
+RUN perl -pi -e "ys#;date.timezone =.*#date.timezone = Europe/London#g" /etc/php.ini
 
 # yum clean all
 RUN yum clean all
