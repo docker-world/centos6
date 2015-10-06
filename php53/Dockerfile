@@ -15,7 +15,7 @@ RUN yum install php-xml -y
 RUN yum install php-intl -y
 
 # set php date timezone
-RUN perl -pi -e "ys#;date.timezone =.*#date.timezone = Europe/London#g" /etc/php.ini
+RUN perl -pi -e "s#;date.timezone =.*#date.timezone = Europe/London#g" /etc/php.ini
 
 # yum clean all
 RUN yum clean all
