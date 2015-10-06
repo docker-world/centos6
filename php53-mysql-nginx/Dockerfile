@@ -17,7 +17,3 @@ RUN yum install php-intl -y
 RUN yum install mysql-server-5.1.73-5.el6_6.x86_64 -y
 
 RUN yum clean all
-
-EXPOSE 80
-EXPOSE 443
-EXPOSE 3306
