@@ -6,5 +6,13 @@ Images include:
 
 	- Base: Perl, Git, Vim
 	- Httpd
-	- PHP 5.3 with MySQLi, PDO, XML, Intl
+	- PHP 5.3
+		- CLI
+		- FPM
+		- PDO
+		- XML
+		- Intl
+		- Mcrypt
+		- MySQLi
+		- PECL APC
 	- PHP 5.3 + MySQL
